@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "RGB";
+}
+<style>
+    .displayBox {
+        height: 200px;
+        width: 300px;
+    }
+
+    .hexString{
+
+        /*color appears on box like a paint chip*/
+        color: white; 
+        position: absolute;
+        text-align: end;
+        bottom: 0;
+        left: 0;
+       
+    }
+
+
+</style>
+
+<h2>RGB </h2>
+
+<!--Using razer to grab build an HTML form in C#-->
+<div class="row">
+    <div class="col-md-4">
+        @using (Html.BeginForm("RGB", "Home", FormMethod.Get)) {
+            @Html.Label("redValue", "R");
+            @Html.TextBox("redValue", "0", new { @class = "form-control", type = "number", max = "255", min = "0" });
+            @Html.Label("greenValue", "G");
+            @Html.TextBox("greenValue", "0", new { @class = "form-control", type = "number", max = "255", min = "0" });
+            @Html.Label("blueValue", "B");
+            @Html.TextBox("blueValue", "0", new { @class = "form-control", type = "number", max = "255", min = "0" });
+
+            <button type="submit" class="btn btn-primary-lg">Display</button>
+
+        }
+
+    </div>
+
+<!--Retrieving values from HomeController.cs for color display-->
+    <p><div class="col-md-2 displayBox" style="background-color: rgba(@ViewBag.red, @ViewBag.green, @ViewBag.blue)" id="displayBox"</div></p>
+
+    <div class="hexString col-md-2">
+   
+        <p>#@ViewBag.hexString</p>
+    </div>
+</div>
+

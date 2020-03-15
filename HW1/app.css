@@ -1,0 +1,83 @@
+/*need space between items in unorderered list for recipe instructions */
+ul {
+    padding-bottom: 15px;
+}
+
+li {
+    font-weight: bold;
+}
+.disclaimer {
+    font-size: 10px !important;
+    padding-top: 50px !important;
+}
+
+.title {
+    text-align: center;
+    color: black;
+}
+
+.content {
+    font-style: italic;
+    max-width: 500px;
+    margin: auto;
+    padding-bottom: 15px;
+}
+
+/*Navigation bar help from w3schools.com/css*/
+.navigateBar {
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.navigateBar a {
+    float: left;
+    color: #E80804;
+    text-align: left;
+    padding: 10px;
+}
+
+.navigateBar a:hover {
+    background-color: gray;
+    color: white;
+}
+
+.navigateBar a.active {
+    background-color: black;
+    color: red;
+}
+
+img {
+    margin: auto;
+    display: block;
+    width: 300px;
+    height: 300px;
+}
+
+table {
+    margin: auto;
+    width: 50% !important; 
+ }
+
+ th, td {
+    border-bottom: 1px solid #ddd;
+    color: darkslategray;
+ }
+
+ th {
+     font-style: italic;
+ }
+
+
+ .home_bg {
+    background-image: url("hw1_pictures/potPic.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-attachment: fixed;
+ }
+
+ .basics_bg {
+    background-image: url("hw1_pictures/utensilPic.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-attachment: fixed;
+ }

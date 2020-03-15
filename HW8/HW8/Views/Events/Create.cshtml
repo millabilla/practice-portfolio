@@ -1,0 +1,75 @@
+﻿@model HW8.Models.Event
+
+@{
+    ViewBag.Title = "Create";
+    List<SelectListItem> distanceList = new List<SelectListItem>();
+    distanceList.Add(new SelectListItem() { Text = "100", Value = "100" });
+    distanceList.Add(new SelectListItem() { Text = "110", Value = "110" });
+    distanceList.Add(new SelectListItem() { Text = "200", Value = "200" });
+    distanceList.Add(new SelectListItem() { Text = "300", Value = "300" });
+    distanceList.Add(new SelectListItem() { Text = "400", Value = "400" });
+    distanceList.Add(new SelectListItem() { Text = "800", Value = "800" });
+    distanceList.Add(new SelectListItem() { Text = "1500", Value = "1500" });
+    distanceList.Add(new SelectListItem() { Text = "3000", Value = "3000" });
+   
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm())
+{
+                @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+    <h4>Event</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.LocationID, "Location", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("LocationID", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.LocationID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Distance, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+
+                @Html.DropDownList("Distance", distanceList, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Distance, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AthleteID, "Athlete", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("AthleteID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.AthleteID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RaceTimes, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.RaceTimes, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.RaceTimes, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("View All Events", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

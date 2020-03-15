@@ -1,0 +1,85 @@
+﻿@model HW6.Models.ViewModels.StockItemViewModel
+
+
+@{
+    //ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Product Detail</h3>
+
+
+
+<div class="row">
+    <div class="col-md-6">
+
+        <dl class="dl-horizontal">
+
+            <dt>Stock Name:</dt>
+            <dd>@Html.DisplayFor(model => model.StockName)</dd>
+
+            <dt> Stock Size:</dt>
+            <dd>@Html.DisplayFor(model => model.StockSize)</dd>
+
+            <dt>Retail Price:</dt>
+            <dd>$@Html.DisplayFor(model => model.StockRetailPrice)</dd>
+
+            <dt>Unit Weight:</dt>
+            <dd> @Html.DisplayFor(model => model.StockUnitWeight)</dd>
+
+            <dt> Lead Time (Days): </dt>
+            <dd> @Html.DisplayFor(model => model.StockLeadTime) </dd>
+
+            <dt>Valid Since:</dt>
+            <dd>@Html.DisplayFor(model => model.StockValidSince)</dd>
+
+            <dt> Country of Origin:</dt>
+            <dd> @Html.DisplayFor(model => model.StockOrigin) </dd>
+
+            <dt>Tags:</dt>
+            <dd> @Html.DisplayFor(model => model.StockTags) </dd>
+
+        </dl>
+
+    </div>
+
+    <div class="col-md-6">
+        <img src="https://s3.us-east-2.amazonaws.com/shdhs.org/2018/01/No-image-available.jpg" height="200" width="250" />
+    </div>
+
+    <div class="col-md-5">
+
+        <h3>Supplier Information</h3>
+        <dl class="dl-horizontal">
+            <dt>Supplier:</dt>
+            <dd>@Html.DisplayFor(model => model.SupplierName)</dd>
+            
+            <dt>Phone:</dt>
+            <dd>@Html.DisplayFor(model => model.SupplierPhone)</dd>
+
+            <dt>Fax:</dt>
+            <dd>@Html.DisplayFor(model => model.SupplierFax)</dd>
+
+            <dt>Website:</dt>
+            <dd>@Html.ActionLink(Model.SupplierSite, Model.SupplierSite.ToString())</dd>
+
+            <dt>Contact:</dt>
+            <dd>@Html.DisplayFor(model => model.SupplierPerson)</dd>
+        </dl>
+
+        <h3>Sales History Summary</h3>
+        <dl class="dl-horizontal">
+            <dt>Orders:</dt>
+            <dd>@Html.DisplayFor(model  => model.OrderNumbers)</dd>
+
+            <dt>Gross Sales:</dt>
+            <dd>$@Html.DisplayFor(model  => model.GrossSales)</dd>
+
+            <dt>Gross Profit:</dt>
+            <dd>$@Html.DisplayFor(model  => model.Profit)</dd>
+        </dl>
+
+        <h3>Top Purchasers</h3>
+        Feature coming soon!
+    </div>
+</div>

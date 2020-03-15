@@ -1,0 +1,44 @@
+
+/*to get image to take up whole page*/
+body, html {
+    height: 100%;
+  }
+
+.basic {
+    text-align: center;
+    background-image: url("https://wallpaperaccess.com/full/124383.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    color: blanchedalmond;
+    height: 200%;
+   
+}
+
+p {
+  font-weight: bold;
+  font-style: cursive;
+  color: black;
+  background-color: cornsilk;
+  text-align: center;
+  width: 50%;
+  padding: 30px;
+  margin: auto;
+
+}
+
+table {
+    padding-right: 100px;
+    width: 50%;
+    text-align: left;
+    border: 5px solid black;
+    border-collapse: collapse;
+    margin:auto; 
+    background-color: cornsilk;
+    color: black;
+
+}
+
+td.bottomBorder {
+
+    border-top: .5px solid black;
+}

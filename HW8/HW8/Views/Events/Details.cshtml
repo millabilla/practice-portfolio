@@ -1,0 +1,57 @@
+﻿@model HW8.Models.Event
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Event</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Athlete.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Athlete.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Distance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Distance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hurdles)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hurdles)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RaceTimes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RaceTimes)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

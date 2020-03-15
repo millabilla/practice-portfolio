@@ -1,0 +1,41 @@
+﻿@model HW8.Models.ViewModels.AthleteViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<h2>Details</h2>
+
+
+
+<h4>@Html.DisplayFor(model => model.Name)</h4>
+<hr />
+<button class="btn btn-danger" , onclick="location.href='@Url.Action("graphAth", "Athlete")';return false;">See graph</button>
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Meet Date</th>
+                <th>Distance</th>
+                <th>Location</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < Model.MeetDate.Count; i++) {
+                <tr>
+
+                    <td>@Html.DisplayFor(model => Model.MeetDate[i])</td>
+                    <td>@Html.DisplayFor(model => Model.Distance[i])</td>
+                    <td>@Html.DisplayFor(model => Model.Location[i])</td>
+                    <td>@Html.DisplayFor(model => Model.RaceTime[i])</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            
+            <meta charset="UTF-8">
+           
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            
+            <link href="styles.css" rel="stylesheet"/>   
+    </head>
+
+    <title>Log Book</title>
+    <body>
+        <div class ="basic">
+                <h1>Welcome, fellow bookworm!</h1>
+                <br>
+                <p> Tired of the social aspects of every website? Trying to avoid some jerk with an
+                    opinion on what you're reading? Welcome to the Library, where no one is allowed to 
+                    talk to you. Just enjoy logging books you've read for your own benefit!</p>
+                <br><br>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <form id=logBook>
+                                <div class="form-group row">
+                                    <label for="title" class="col-sm-4 col-form-label"></label>
+                                    <div class="col-sm-4">
+                                        <input type="text" id="title" placeholder="Title" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="author" class="col-sm-4 col-form-label"></label>
+                                    <div class="col-sm-4">
+                                        <input type="text" id="author" placeholder="Author" class="form-control">
+                                    </div>
+                                </div>
+                                <button type="submit">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <table id="booksRead">
+                    <tr class="bottomBorder">
+                        <th>Author</th>
+                        <th>Title</th>
+                    </tr>
+                </table>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.js"></script>
+    <script src="hw2_java.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>

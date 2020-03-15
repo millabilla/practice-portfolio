@@ -1,0 +1,65 @@
+﻿@model IEnumerable<HW6.Models.StockItem>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!--
+
+    source used for this attempt
+    https://www.youtube.com/watch?v=lChDn1Ti0jI
+-->
+
+    <div class="row">
+        
+
+            <div class="center">
+                <h2>Search Database</h2>
+                Here at World Wide Importers we have everything you need so long as everything you need consists of fun
+                gag gifts.
+            </div>
+            <br />
+            <br />
+        <div class="col-md-offset-2">
+            @using (Html.BeginForm("Index", "StockItemViewModels", FormMethod.Post)) {
+
+                @Html.TextBox("search", null, new { @class = "searchbar" })
+                <input type="submit" id="submit" placeholder="Search" />
+
+                <br />
+                <br />
+                <table>
+
+                    @if (Model != null) {
+                        if (Model.Count() == 0) {
+                            <tr>
+                                Item must not exist in our database.
+                                Contact Customer Service if you feel this item should be sold by World Wide Importers.
+                            </tr>
+                        }
+
+                        else {
+                            foreach (var item in Model) {
+                                <tr>
+                                    <td>
+                                        @Html.ActionLink(item.StockItemName.ToString(),
+                                                        "Details/" + item.StockItemID.ToString(),
+                                                        "StockItemViewModels",
+                                                        null,
+                                                        new { @class = "linkResult" })
+                                    </td>
+                                </tr>
+                            }
+                        }
+
+
+                    }
+
+                </table>
+
+            }
+        </div>
+    </div>
