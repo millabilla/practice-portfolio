@@ -20,7 +20,7 @@ def ExtractDataFromRequest(data):
 		try:
 			text=book.text
 			pattern=re.compile(r'(?<=\d\.).+(?=\n)')#regular expression that will parse the data retrieved from penguin website
-			datarow=re.findall(pattern,text)[0].split('by')
+			datarow=re.findall(pattern,text)[0].split(' by')
 			if(len(datarow)>1):
 				key,val=datarow[0],datarow[1]
 				dictData[key]=val
